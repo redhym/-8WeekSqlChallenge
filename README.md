@@ -1,4 +1,4 @@
-# -8WeekSqlChallenge
+# [-8WeekSqlChallenge](https://8weeksqlchallenge.com/case-study-1/)
 Case Study #1 - Danny's Diner
 
 Danny Ma · May 1, 2021

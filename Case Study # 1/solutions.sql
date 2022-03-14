@@ -168,7 +168,7 @@ ORDER BY customer_id;
   CASE
   WHEN ms.join_date > s.order_date THEN 'N'
   WHEN ms.join_date <= s.order_date THEN 'Y'
-  ELSE 'N' END AS member
+  ELSE 'N' END AS m
  FROM dannys_diner.sales AS s
  LEFT JOIN dannys_diner.menu AS m
   ON s.product_id = m.product_id

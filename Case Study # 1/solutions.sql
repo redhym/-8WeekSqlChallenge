@@ -159,7 +159,29 @@ WHERE EXTRACT(MONTH FROM order_date) = 1) as t
 GROUP BY customer_id
 ORDER BY customer_id;
 
+ ---------------------------------------------
+ BONUS QUESTION -  JOIN ALL THE THINGS
  
+ WITH join_all AS 
+(
+ SELECT s.customer_id, s.order_date, m.product_name, m.price,
+  CASE
+  WHEN ms.join_date > s.order_date THEN 'N'
+  WHEN ms.join_date <= s.order_date THEN 'Y'
+  ELSE 'N' END AS member
+ FROM dannys_diner.sales AS s
+ LEFT JOIN dannys_diner.menu AS m
+  ON s.product_id = m.product_id
+ LEFT JOIN dannys_diner.members AS ms
+  ON s.customer_id = ms.customer_id
+)
+SELECT *, CASE
+ WHEN member = 'N' then NULL
+ ELSE
+  RANK () OVER(PARTITION BY customer_id, member
+  ORDER BY order_date) END AS ranking
+FROM join_all;
+
 
  
  

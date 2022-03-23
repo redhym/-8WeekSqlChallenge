@@ -65,6 +65,8 @@ SELECT * FROM runner_orders;
 
 
 3. Update datatypes in runner table
+
+
    SELECT CAST("duration" AS decimal(5,1))
    FROM runner_orders
   

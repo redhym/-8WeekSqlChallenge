@@ -19,6 +19,7 @@ WHERE extras IS 'null' or extras IS NULL;
 
 SELECT * FROM customer_orders 
 
+![Screen Shot 2022-03-23 at 3 17 29 PM](https://user-images.githubusercontent.com/85157023/159611295-8d048707-62c8-42b0-80d9-99662b2c07fa.png)
 
 
 

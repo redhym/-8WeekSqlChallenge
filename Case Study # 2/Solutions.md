@@ -2,7 +2,7 @@
 
 After investigating the date, I found that some tables need cleaning and transforming to do.
 
-Tables that need cleaning are - customer_orders, runner_orders and pizza_runner.
+Tables that need cleaning are - customer_orders, runner_orders.
 
 1.customer_orders: 
 
@@ -61,6 +61,9 @@ UPDATE runner_orders
 SET cancellation = '' 
 WHERE cancellation = 'null' or cancellation IS NULL;
 SELECT * FROM runner_orders;
+
+
+![Screen Shot 2022-03-23 at 3 41 24 PM](https://user-images.githubusercontent.com/85157023/159613372-683dcab2-ca3c-4942-be51-67e4c3e689c6.png)
 
 
 

@@ -19,7 +19,8 @@
    FROM pizza_runner.runner_orders
    WHERE distance != ''
    GROUP BY runner_id;
-   
-   
+
+![Screen Shot 2022-03-24 at 11 39 25 AM](https://user-images.githubusercontent.com/85157023/159807854-1d24cebe-b4c4-4998-b887-9f8a47b9e6ff.png)
+
 
 

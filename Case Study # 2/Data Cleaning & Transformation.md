@@ -64,7 +64,7 @@ SELECT * FROM runner_orders;
 ![Screen Shot 2022-03-23 at 3 41 24 PM](https://user-images.githubusercontent.com/85157023/159613372-683dcab2-ca3c-4942-be51-67e4c3e689c6.png)
 
 
-3. Update datatypes in runner table
+3. Update datatypes in runner_orders table
 
 
    SELECT CAST("duration" AS decimal(5,1))

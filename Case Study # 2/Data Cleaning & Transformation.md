@@ -4,9 +4,7 @@ After investigating the date, I found that some tables need cleaning and transfo
 
 Tables that need cleaning are - customer_orders, runner_orders.
 
-1.customer_orders: 
-
-We need to replace null, NULL or NA values with empty or ‘ ‘
+1.customer_orders: We need to replace null, NULL or NA values with empty or ‘ ‘
 
 UPDATE customer_orders 
 SET exclusions = '' 
@@ -20,14 +18,14 @@ SELECT * FROM customer_orders
 
 ![Screen Shot 2022-03-23 at 3 17 29 PM](https://user-images.githubusercontent.com/85157023/159611295-8d048707-62c8-42b0-80d9-99662b2c07fa.png)
 
-2. runner_orders
+2. runner_orders: We need to replace null with empty or ‘ ‘ and remove km/min/minute/minutes from distance column.
 
  UPDATE runner_orders 
  SET distance = '' 
  WHERE distance = 'null';
  SELECT * FROM runner_orders;
  
- UPDATE runner_orders 
+UPDATE runner_orders 
 SET distance = TRIM('km' from distance) 
 WHERE distance LIKE '%km';
 SELECT * FROM runner_orders;
@@ -66,7 +64,16 @@ SELECT * FROM runner_orders;
 ![Screen Shot 2022-03-23 at 3 41 24 PM](https://user-images.githubusercontent.com/85157023/159613372-683dcab2-ca3c-4942-be51-67e4c3e689c6.png)
 
 
-
+3. Update datatypes in runner table
+   SELECT CAST("duration" AS decimal(5,1))
+   FROM runner_orders
+  
+   SELECT CAST("distance" AS decimal(5,1))
+   FROM runner_orders
+   
+   SELECT CAST("pickup_time" AS datetime)
+   FROM runner_orders
+  
 
 
 

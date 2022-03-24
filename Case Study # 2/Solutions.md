@@ -96,4 +96,13 @@ WHERE r.distance != '' AND <br/>
 	c.extras != '' <br/>
 GROUP BY c.customer_id; 
 
+![Screen Shot 2022-03-24 at 2 05 35 PM](https://user-images.githubusercontent.com/85157023/159821661-8c75e837-8fac-453e-b86a-f130a1f79967.png)
+
+9. What was the total volume of pizzas ordered for each hour of the day?
+
+SELECT hour(order_time) each_hour, COUNT(order_id)
+FROM pizza_runner.customer_orders
+GROUP BY hour(order_time)
+ORDER BY hour(order_time);
+
 

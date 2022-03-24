@@ -72,7 +72,8 @@ SELECT<br/>
 GROUP BY s.customer_id, m.product_name<br/>
 ORDER BY most_popular DESC;
 
-![5](https://user-images.githubusercontent.com/85157023/159826622-481758c7-6d94-40ad-bf6e-2c739b4882a5.png)
+
+![Screen Shot 2022-03-24 at 2 58 23 PM](https://user-images.githubusercontent.com/85157023/159826788-a1dfd924-9e16-4517-b2ac-8e320b6a2d5d.png)
 
 
 ----------------------------------------------------

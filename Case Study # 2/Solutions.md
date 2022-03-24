@@ -48,6 +48,15 @@ ORDER BY c.customer_id;
 
 6. What was the maximum number of pizzas delivered in a single order?
 
+SELECT r.order_id, COUNT(c.pizza_id) max_delivered
+FROM pizza_runner.runner_orders r
+JOIN customer_orders c
+ON c.order_id = r.order_id
+WHERE distance != '' 
+GROUP BY r.order_id
+ORDER BY max_delivered DESC
+LIMIT 1;
 
+![Screen Shot 2022-03-24 at 1 39 13 PM](https://user-images.githubusercontent.com/85157023/159819202-73175fc4-7f4a-4d8f-bb68-d0f48fa6acc1.png)
 
 

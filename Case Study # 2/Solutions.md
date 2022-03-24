@@ -83,4 +83,17 @@ ORDER BY c.customer_id;
 
 8. How many pizzas were delivered that had both exclusions and extras?
 
+SELECT c.customer_id, <br/>
+SUM(   <br/>
+   CASE WHEN c.exclusions != '' AND c.extras != '' THEN 1   <br/>
+   ELSE 0 <br/>
+   END) AS both_exclusions_extras <br/>
+FROM pizza_runner.customer_orders c <br/>
+JOIN runner_orders r <br/>
+ON c.order_id = r.order_id <br/>
+WHERE r.distance != '' AND <br/>
+	c.exclusions != '' AND <br/>
+	c.extras != '' <br/>
+GROUP BY c.customer_id; 
+
 

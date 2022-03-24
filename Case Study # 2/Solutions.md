@@ -44,6 +44,8 @@ ON c.pizza_id = n.pizza_id
 GROUP BY c.customer_id, n.pizza_name
 ORDER BY c.customer_id;
 
+![Screen Shot 2022-03-24 at 1 00 43 PM](https://user-images.githubusercontent.com/85157023/159815837-8328fbbd-48ef-44d4-b079-a3a2562e7677.png)
+
 
 
 

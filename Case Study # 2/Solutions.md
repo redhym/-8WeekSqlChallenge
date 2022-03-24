@@ -1,3 +1,5 @@
+A. Pizza Metrics
+
 1. How many pizzas were ordered?
 
   SELECT COUNT(pizza_id) total_pizzas
@@ -58,5 +60,25 @@ ORDER BY max_delivered DESC
 LIMIT 1;
 
 ![Screen Shot 2022-03-24 at 1 39 13 PM](https://user-images.githubusercontent.com/85157023/159819202-73175fc4-7f4a-4d8f-bb68-d0f48fa6acc1.png)
+
+7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
+
+SELECT c.customer_id, 
+SUM(
+   CASE WHEN c.exclusions != '' OR c.extras != '' THEN 1
+   ELSE 0
+   END) AS at_least_1_change,
+ SUM(
+     CASE WHEN c.exclusions = '' OR c.extras = '' THEN 1
+     ELSE 0
+	END) AS no_change
+FROM pizza_runner.customer_orders c
+JOIN runner_orders r
+ON c.order_id = r.order_id
+WHERE r.distance != '' 
+GROUP BY c.customer_id
+ORDER BY c.customer_id;
+
+
 
 

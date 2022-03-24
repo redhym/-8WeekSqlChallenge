@@ -100,9 +100,22 @@ GROUP BY c.customer_id;
 
 9. What was the total volume of pizzas ordered for each hour of the day?
 
-SELECT hour(order_time) each_hour, COUNT(order_id)
-FROM pizza_runner.customer_orders
-GROUP BY hour(order_time)
+SELECT hour(order_time) each_hour, COUNT(order_id) <br/>
+FROM pizza_runner.customer_orders <br/>
+GROUP BY hour(order_time) <br/>
 ORDER BY hour(order_time);
+
+![Screen Shot 2022-03-24 at 2 18 35 PM](https://user-images.githubusercontent.com/85157023/159822846-c4835cd6-debf-47e1-9929-4832e567ca5d.png)
+
+
+10. What was the volume of orders for each day of the week?
+
+SELECT dayname(order_time) day_of_the_week, <br/>
+COUNT(order_id) orders  <br/>
+FROM pizza_runner.customer_orders <br/>
+GROUP BY dayname(order_time) <br/>
+ORDER BY orders DESC; 
+
+![Screen Shot 2022-03-24 at 2 24 07 PM](https://user-images.githubusercontent.com/85157023/159823413-632fe93f-c65c-4687-86ae-319c64528a08.png)
 
 

@@ -35,6 +35,15 @@ GROUP BY n.pizza_name;
 
 ![Screen Shot 2022-03-24 at 12 54 17 PM](https://user-images.githubusercontent.com/85157023/159815308-853848ea-688f-41ad-9ca1-cb679d25f385.png)
 
+5. How many Vegetarian and Meatlovers were ordered by each customer?
+
+SELECT c.customer_id, n.pizza_name, COUNT(n.pizza_id) pizza_ordered
+FROM pizza_runner.customer_orders c
+JOIN pizza_names as n
+ON c.pizza_id = n.pizza_id
+GROUP BY c.customer_id, n.pizza_name
+ORDER BY c.customer_id;
+
 
 
 

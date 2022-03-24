@@ -79,6 +79,8 @@ WHERE r.distance != ''
 GROUP BY c.customer_id
 ORDER BY c.customer_id;
 
+![Screen Shot 2022-03-24 at 1 52 29 PM](https://user-images.githubusercontent.com/85157023/159820472-55569ac9-bcc0-4326-beac-558e693e2468.png)
 
+8. How many pizzas were delivered that had both exclusions and extras?
 
 
